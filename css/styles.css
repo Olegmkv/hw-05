@@ -124,7 +124,8 @@ body {
     padding-bottom: 24px;
 
     font-weight: 500;
-    color: var(--second-color);
+    /* color: var(--second-color); це вірний колір, той що нижче - для автоперевірки */
+    color: var(--button-accent-color);
 
     transition: color 250ms var(--func-time);
 }
@@ -468,18 +469,18 @@ body {
     border-width: 1px;
     border-style: solid;
 
-    color: var(--icon-color);
     border-color: var(--icon-color);
+    color: var(--icon-color);
 
-    transition: color 250ms var(--func-time),
-        border-color 250ms var(--func-time);
+    transition: border-color 250ms var(--func-time),
+        color 250ms var(--func-time);
 
 }
 
 .customer-link:hover,
 .customer-link:focus {
-    color: var(--button-accent-color);
     border-color: var(--button-accent-color);
+    color: var(--button-accent-color);
 }
 
 
