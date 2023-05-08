@@ -124,15 +124,13 @@ body {
     padding-bottom: 24px;
 
     font-weight: 500;
+    color: var(--second-color);
 
     transition: color 250ms var(--func-time);
 }
 
 .head-link:hover,
-.head-link:focus {
-    color: var(--button-accent-color);
-}
-
+.head-link:focus,
 .head-link-active {
     color: var(--button-accent-color);
 }
@@ -166,11 +164,10 @@ body {
     transition: transform 250ms var(--func-time);
 }
 
-
-.head-link:hover::after {
+.head-link:hover::after,
+.head-link:focus::after {
     transform: scaleX(1);
 }
-
 
 .adr {
     font-style: normal;
@@ -186,9 +183,8 @@ body {
     padding-bottom: 24px;
 
     color: var(--primary-text-color);
-    transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: var(--func-time);
+
+    transition: color 250ms var(--func-time);
 }
 
 .adr-list .item:not(:last-child) {
@@ -205,9 +201,13 @@ body {
 .hero {
     padding: 188px 0;
     max-width: 1440px;
-    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin-left: auto;
     margin-right: auto;
+
+    text-align: center;
 
     background-color: var(--second-color);
 
@@ -216,9 +216,6 @@ body {
             rgba(46, 47, 66, 0.7)),
         url(../images/hero/people-office.jpg);
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .hero-head {
@@ -431,7 +428,7 @@ body {
     fill: var(--accent-color);
 }
 
-/* ======= Customers ======= */
+/* ============ Customers ============ */
 
 .customers {
     padding-top: 120px;
@@ -462,22 +459,20 @@ body {
 
 .customer-link {
     display: flex;
-
     justify-content: center;
     align-items: center;
 
     width: 168px;
     height: 88px;
-
     border-radius: 4px;
     border-width: 1px;
     border-style: solid;
+
     color: var(--icon-color);
     border-color: var(--icon-color);
 
-    transition-property: color, border-color;
-    transition-duration: 250ms;
-    transition-timing-function: var(--func-time);
+    transition: color 250ms var(--func-time),
+        border-color 250ms var(--func-time);
 
 }
 
@@ -787,7 +782,7 @@ body {
 .btn-close {
     fill: var(--primary-text-color);
 
-    transition: fill 250ms var(--func-time),
+    transition: fill 250ms var(--func-time);
 }
 
 .modal-button:hover .btn-close,
