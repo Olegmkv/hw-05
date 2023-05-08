@@ -561,15 +561,16 @@ body {
     row-gap: 48px;
 }
 
+.works-list>.item {
+    width: calc((100% - 48px) / 3);
+
+}
+
 .works-card {
     position: relative;
     overflow: hidden;
 }
 
-.works-list>.item {
-    width: calc((100% - 48px) / 3);
-
-}
 
 .works-link {
     display: block;
@@ -626,24 +627,11 @@ body {
     transition: transform 250ms var(--func-time);
 }
 
-.works-link:hover .works-popup-text {
+.works-link:hover .works-popup-text,
+.works-link:focus .works-popup-text {
     transform: translateY(0%);
 
 }
-
-/* padding: 16px;
-    transform: translateY(0%);
-
-    background-color: var(--overlay-color);
-    color: var(--primary-fon-color);
-
-    transition: transform 250ms ease;
-}
-
-.works-card:hover .works-over {
-    transform: translateY(-100%);
-} */
-
 
 
 /*========== Footer ========*/
