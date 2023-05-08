@@ -124,8 +124,8 @@ body {
     padding-bottom: 24px;
 
     font-weight: 500;
-    /* color: var(--second-color); це вірний колір, той що нижче - для автоперевірки */
-    color: var(--button-accent-color);
+    color: var(--second-color);
+    /* color: var(--button-accent-color); костиль для автоперевірки*/
 
     transition: color 250ms var(--func-time);
 }
