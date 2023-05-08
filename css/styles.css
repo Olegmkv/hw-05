@@ -74,6 +74,8 @@ body {
     /*   outline: 2px solid tomato;*/
 }
 
+/*================== header ================*/
+
 .header {
     border-bottom: 1px solid var(--secondary-fon-color);
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
@@ -85,9 +87,6 @@ body {
     display: flex;
     justify-content: space-between;
 }
-
-/*=============== naviganion ============*/
-
 
 .head-nav {
     display: flex;
@@ -126,10 +125,7 @@ body {
 
     font-weight: 500;
 
-
-    transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: var(--func-time);
+    transition: color 250ms var(--func-time);
 }
 
 .head-link:hover,
@@ -649,7 +645,6 @@ body {
     display: flex;
     justify-content: left;
     align-items: baseline;
-    /* gap: 120px; */
 
 }
 
@@ -719,15 +714,17 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-
-    opacity: 1;
     width: 100%;
     height: 100%;
 
+    opacity: 1;
+    visibility: visible;
+
     background-color: rgba(46, 47, 66, 0.4);
 
+    transition: opacity 250ms var(--func-time),
+        visibility 250ms var(--func-time);
 
-    transition: opacity 250ms var(--func-time);
 }
 
 .is-hidden {
@@ -753,8 +750,8 @@ body {
         0px 2px 1px rgba(0, 0, 0, 0.2);
     visibility: visible;
     opacity: 1;
-    transition: opacity 250ms var(--func-time),
-        visibility 250ms var(--func-time);
+
+    transition: transform 250ms var(--func-time);
 
 }
 
@@ -775,20 +772,25 @@ body {
     border-radius: 50%;
 
     border: 1px solid rgba(0, 0, 0, 0.1);
-    fill: var(--primary-text-color);
     background-color: var(--secondary-fon-color);
 
     transition: background-color 250ms var(--func-time),
-        fill 250ms var(--func-time),
         border 250ms var(--func-time);
-    /* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .modal-button:hover,
 .modal-button:focus {
     background-color: var(--button-accent-color);
     border: none;
-    fill: var(--primary-fon-color);
 }
 
-.btn-close {}
+.btn-close {
+    fill: var(--primary-text-color);
+
+    transition: fill 250ms var(--func-time),
+}
+
+.modal-button:hover .btn-close,
+.modal-button:focus .btn-close {
+    fill: var(--primary-fon-color);
+}
