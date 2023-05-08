@@ -526,20 +526,24 @@ body {
     letter-spacing: 0.04em;
 
     border-radius: 4px;
-    border: 1px solid var(--secondary-fon-color);
+    border-width: 1px;
+    border-style: solid;
 
+    border-color: var(--secondary-fon-color);
     color: var(--button-color);
     cursor: pointer;
 
-    transition-property: border, color, background-color, box-shadow;
-    transition-duration: 250ms;
-    transition-timing-function: var(--func-time);
+    transition: border-color 250ms var(--func-time),
+        color 250ms var(--func-time),
+        background-color 250ms var(--func-time),
+        box-shadow 250ms var(--func-time);
+
 }
 
 .filter-btn:hover,
 .filter-btn:focus,
 .filter-btn:active {
-    border: 1px solid transparent;
+    border-color: transparent;
     color: var(--primary-fon-color);
     background-color: var(--button-accent-color);
 
@@ -569,6 +573,7 @@ body {
 
 .works-link {
     display: block;
+    transition: box-shadow 250ms var(--func-time);
 }
 
 .works-link:hover,
@@ -604,22 +609,40 @@ body {
     color: var(--second-color);
 }
 
-.works-over {
+.works-popup-text {
     position: absolute;
-    transition: transform 250ms ease;
-
     width: 100%;
     height: 100%;
-    padding: 16px;
+    top: 0;
+    padding: 40px 32px;
+
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+
+    background-color: var(--button-color);
+    color: var(--accent-color);
+    transform: translateY(100%);
+    transition: transform 250ms var(--func-time);
+}
+
+.works-link:hover .works-popup-text {
+    transform: translateY(0%);
+
+}
+
+/* padding: 16px;
+    transform: translateY(0%);
 
     background-color: var(--overlay-color);
     color: var(--primary-fon-color);
 
+    transition: transform 250ms ease;
 }
 
 .works-card:hover .works-over {
     transform: translateY(-100%);
-}
+} */
 
 
 
@@ -761,16 +784,20 @@ body {
     border-radius: 50%;
 
     border: 1px solid rgba(0, 0, 0, 0.1);
-
+    fill: var(--primary-text-color);
     background-color: var(--secondary-fon-color);
 
-    transition: background-color 2250ms var(--func-time),
-        border 2250ms var(--func-time);
+    transition: background-color 250ms var(--func-time),
+        fill 250ms var(--func-time),
+        border 250ms var(--func-time);
+    /* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
-.modal-button:hover {
+.modal-button:hover,
+.modal-button:focus {
     background-color: var(--button-accent-color);
     border: none;
+    fill: var(--primary-fon-color);
 }
 
 .btn-close {}
